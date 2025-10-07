@@ -1,11 +1,74 @@
-import React from 'react';
+import React from "react";
+import Logo from "../assets/Images/logo.png";
+import { Home, AppWindow, Download, Menu, Github } from "lucide-react";
 
 const Navbar = () => {
-    return (
-        <div>
-            <h1>Navbar</h1>
+  return (
+    <div className="navbar bg-base-100 shadow-sm px-4 sm:px-6 md:px-8 lg:px-10 mx-auto">
+
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <Menu className="w-6 h-6" />
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a className="flex items-center gap-2">
+                <Home className="w-5 h-5" /> Home
+              </a>
+            </li>
+            <li>
+              <a className="flex items-center gap-2">
+                <AppWindow className="w-5 h-5" /> Apps
+              </a>
+            </li>
+            <li>
+              <a className="flex items-center gap-2">
+                <Download className="w-5 h-5" /> Installation
+              </a>
+            </li>
+          </ul>
         </div>
-    );
+
+        <a className="btn btn-ghost normal-case text-xl flex items-center gap-2">
+          <img src={Logo} alt="Logo" className="w-10 h-10" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-bold text-2xl">
+            HERO.IO
+          </span>
+        </a>
+      </div>
+
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1 gap-4">
+          <li>
+            <a className="flex items-center gap-1">
+              <Home className="w-5 h-5" /> Home
+            </a>
+          </li>
+          <li>
+            <a className="flex items-center gap-1">
+              <AppWindow className="w-5 h-5" /> Apps
+            </a>
+          </li>
+          <li>
+            <a className="flex items-center gap-1">
+              <Download className="w-5 h-5" /> Installation
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="navbar-end flex items-center gap-2">
+        <a className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white hover:opacity-90">
+           <Github className="w-5 h-5" /> Contribute
+        </a>
+    
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
