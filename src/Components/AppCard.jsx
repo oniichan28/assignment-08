@@ -1,12 +1,14 @@
 import React from 'react';
 import downloadIcon from '../assets/Images/icon-downloads.png';
 import reviewIcon from '../assets/Images/icon-ratings.png'
+import { Link } from 'react-router-dom';
 
 
 
 const AppCard = ({apps}) => {
-    const {title, companyName, downloads,ratingAvg, image } = apps
+    const {title, companyName, downloads,ratingAvg, image, id } = apps
     return (
+        <Link to ={`/Apps/${id}`}>
         <div className="card bg-base-100 w-full max-w-sm shadow-sm hover:scale-105 transition ease-in-out">
 
   <figure className="px-10 pt-10 h-48 overflow-hidden">
@@ -32,6 +34,7 @@ const AppCard = ({apps}) => {
 
   </div>
 </div>
+        </Link>
     );
 };
 
