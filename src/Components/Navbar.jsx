@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/Images/logo.png";
+import LogoImg from '../assets/Images/logo.png';
 import { Home, AppWindow, Download, Menu, Github, Link } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -36,14 +36,13 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <a className="btn btn-ghost normal-case text-xl flex items-center gap-2">
-    <Link to='/'>
-     <img src={Logo} alt="Logo" className="w-10 h-10" />
-    </Link>
-     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-bold text-2xl">
-      HERO.IO
-    </span>
-    </a>
+        <a href="/" 
+         className="btn btn-ghost normal-case text-xl flex items-center gap-2">
+          <img src={LogoImg} alt="Logo" className="w-10 h-10" />
+           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-bold text-2xl"> HERO.IO
+               </span>
+          </a>
+
 
       </div>
 
@@ -69,12 +68,18 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end flex items-center gap-2">
-        <a className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white hover:opacity-90">
-           <Github className="w-5 h-5" /> Contribute
-        </a>
-    
-      </div>
+      
+    <div className="navbar-end flex items-center gap-2">
+  <a
+    href="https://github.com/oniichan28"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white hover:opacity-90"
+  >
+    <Github className="w-5 h-5" /> Contribute
+  </a>
+</div>
+
     </div>
   );
 };

@@ -5,9 +5,9 @@ import reviewIcon from '../assets/Images/icon-ratings.png'
 
 
 const AppCard = ({apps}) => {
-    const {title, companyName, downloads,reviews, image } = apps
+    const {title, companyName, downloads,ratingAvg, image } = apps
     return (
-        <div className="card bg-base-100 w-full max-w-sm shadow-sm border hover:scale-105 transition ease-in-out">
+        <div className="card bg-base-100 w-full max-w-sm shadow-sm hover:scale-105 transition ease-in-out">
 
   <figure className="px-10 pt-10 h-48 overflow-hidden">
     <img
@@ -21,11 +21,12 @@ const AppCard = ({apps}) => {
   <div className="card-actions flex justify-between w-full px-2">
   <button className="btn">
     <img src={downloadIcon} alt="Downloads" className="w-[16px] h-[16px]" /> 
-    {downloads}
+<h1 className='text-[#00D390]'> {downloads}</h1>
   </button>
   <button className="btn">
     <img src={reviewIcon} alt="Reviews" className="w-[16px] h-[16px]" />
-    {reviews}
+    
+    <h1 className='text-[#FF8811]'> {ratingAvg}</h1>
   </button>
 </div>
 

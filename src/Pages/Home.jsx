@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AppCard from '../Components/AppCard';
 import useApps from '../Hooks/useApps';
+import Banner from '../Components/Banner';
+import { FaArrowTrendUp } from "react-icons/fa6";
 
 const Home = () => {
 
@@ -10,8 +12,23 @@ const Home = () => {
   const featuredApps = apps.slice(0, 8)
    
     return (
+
+        
         <div>
-            
+            <Banner/>
+           <div className='flex flex-col justify-center items-center gap-3 mt-5 relative'>
+            <div className="flex items-center gap-3 mt-5">
+          <h1 className="text-5xl font-semibold">
+                Trending Apps
+         </h1>
+         <FaArrowTrendUp className="text-purple-600 w-12 h-12" />
+          </div>
+  
+ 
+  
+  
+  <p>Explore All Trending Apps on the Market developed by us</p>
+</div>
            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center py-8">
           {featuredApps.map(app => (
            <AppCard key={app.id} apps={app} />
