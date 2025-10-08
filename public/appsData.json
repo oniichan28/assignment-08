@@ -1,0 +1,272 @@
+[
+  {
+    "image": "https://i.ibb.co.com/sdJ04zYT/demo-app-1.webp",
+    "title": "ChatMaster AI",
+    "companyName": "AI Labs",
+    "id": 1,
+    "description": "A smart AI chat assistant for your daily tasks.",
+    "size": 45,
+    "reviews": 1200,
+    "ratingAvg": 4.6,
+    "downloads": 50000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 70 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 650 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/1Jh6dJms/Fitness-Is-Life-by-lumago.jpg",
+    "title": "FitLife Tracker",
+    "companyName": "Wellness Co",
+    "id": 2,
+    "description": "Track your fitness, nutrition, and health goals.",
+    "size": 60,
+    "reviews": 800,
+    "ratingAvg": 4.2,
+    "downloads": 30000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 340 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/v4tqY136/Video-editing-agency-s-logo-Aura-Studio.jpg",
+    "title": "PhotoMagic Editor",
+    "companyName": "CreativeSoft",
+    "id": 3,
+    "description": "Edit photos like a professional with AI-powered tools.",
+    "size": 75,
+    "reviews": 1500,
+    "ratingAvg": 4.7,
+    "downloads": 70000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 25 },
+      { "name": "3 star", "count": 80 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 875 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/rRh8nL2R/Money.jpg",
+    "title": "BudgetBuddy",
+    "companyName": "FinanceTech",
+    "id": 4,
+    "description": "Manage your expenses and savings effortlessly.",
+    "size": 35,
+    "reviews": 600,
+    "ratingAvg": 4.1,
+    "downloads": 25000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 25 },
+      { "name": "3 star", "count": 70 },
+      { "name": "4 star", "count": 200 },
+      { "name": "5 star", "count": 275 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/S4HLLr5J/Meditation-icon-in-Ice-Cream-Style.jpg",
+    "title": "MindSpace Meditation",
+    "companyName": "ZenTech",
+    "id": 5,
+    "description": "Relax and meditate with guided audio sessions.",
+    "size": 50,
+    "reviews": 900,
+    "ratingAvg": 4.5,
+    "downloads": 40000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 60 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 500 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/mCSv2hML/image.jpg",
+    "title": "TravelMate",
+    "companyName": "Wanderlust Inc",
+    "id": 6,
+    "description": "Plan trips and explore destinations worldwide.",
+    "size": 80,
+    "reviews": 1100,
+    "ratingAvg": 4.3,
+    "downloads": 60000,
+    "ratings": [
+      { "name": "1 star", "count": 35 },
+      { "name": "2 star", "count": 25 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 520 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/XrHWRCcm/Notas.jpg",
+    "title": "QuickNotes",
+    "companyName": "ProductiveApps",
+    "id": 7,
+    "description": "Take fast notes and organize your ideas easily.",
+    "size": 20,
+    "reviews": 400,
+    "ratingAvg": 4.0,
+    "downloads": 15000,
+    "ratings": [
+      { "name": "1 star", "count": 10 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 80 },
+      { "name": "4 star", "count": 150 },
+      { "name": "5 star", "count": 140 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/fzq0GS6D/Vegetarian-Food-Logo.jpg",
+    "title": "RecipeWorld",
+    "companyName": "Foodie Labs",
+    "id": 8,
+    "description": "Discover and share delicious recipes from around the world.",
+    "size": 55,
+    "reviews": 1000,
+    "ratingAvg": 4.4,
+    "downloads": 45000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 90 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 510 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/YTqQP3sL/Weather.jpg",
+    "title": "WeatherNow",
+    "companyName": "ClimateTech",
+    "id": 9,
+    "description": "Accurate weather forecasts with hourly updates.",
+    "size": 25,
+    "reviews": 700,
+    "ratingAvg": 4.2,
+    "downloads": 35000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 90 },
+      { "name": "4 star", "count": 250 },
+      { "name": "5 star", "count": 325 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/LDs37JkQ/Collection-colored-thin-icon-of-English-language-learning-subject-book-graduated-hat-learning-and-ed.jpg",
+    "title": "LanguageLearner",
+    "companyName": "EduSmart",
+    "id": 10,
+    "description": "Learn new languages with fun exercises and games.",
+    "size": 70,
+    "reviews": 1300,
+    "ratingAvg": 4.6,
+    "downloads": 65000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 95 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 760 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/yHmrjHr/Download-premium-vector-of-Daily-planner-typography-design-vector-about-planner-scrapbook-daily-plan.jpg",
+    "title": "DailyPlanner",
+    "companyName": "OrganizeIt",
+    "id": 11,
+    "description": "Plan your day and boost productivity efficiently.",
+    "size": 30,
+    "reviews": 500,
+    "ratingAvg": 4.1,
+    "downloads": 20000,
+    "ratings": [
+      { "name": "1 star", "count": 15 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 75 },
+      { "name": "4 star", "count": 150 },
+      { "name": "5 star", "count": 240 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/dJmPxQfp/I-will-make-unique-Animation-logo-design-on-fiverr-for-13-64.jpg",
+    "title": "MovieMania",
+    "companyName": "Entertainment Hub",
+    "id": 12,
+    "description": "Discover movies, shows, and reviews from fans worldwide.",
+    "size": 85,
+    "reviews": 1400,
+    "ratingAvg": 4.5,
+    "downloads": 70000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 25 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 745 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Kxgwd4Zs/Fonica-Music-F-Logo.jpg",
+    "title": "MusicFlow",
+    "companyName": "TuneTech",
+    "id": 13,
+    "description": "Stream and create playlists with unlimited music.",
+    "size": 90,
+    "reviews": 1600,
+    "ratingAvg": 4.7,
+    "downloads": 80000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 90 },
+      { "name": "4 star", "count": 450 },
+      { "name": "5 star", "count": 1005 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/cSxLf89p/Sleep-Illustration-Template-Download-on-Pngtree.jpg",
+    "title": "SleepWell",
+    "companyName": "HealthTech",
+    "id": 14,
+    "description": "Track and improve your sleep quality with smart insights.",
+    "size": 40,
+    "reviews": 850,
+    "ratingAvg": 4.4,
+    "downloads": 40000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 75 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 440 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Q7Qvj6FW/Newspaper-logo-Premium-Vector.jpg",
+    "title": "NewsToday",
+    "companyName": "Global Media",
+    "id": 15,
+    "description": "Stay updated with the latest news and trending stories.",
+    "size": 60,
+    "reviews": 950,
+    "ratingAvg": 4.3,
+    "downloads": 50000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 90 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 465 }
+    ]
+  }
+]

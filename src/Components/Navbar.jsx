@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/Images/logo.png";
-import { Home, AppWindow, Download, Menu, Github } from "lucide-react";
+import { Home, AppWindow, Download, Menu, Github, Link } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -15,49 +16,56 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a className="flex items-center gap-2">
-                <Home className="w-5 h-5" /> Home
-              </a>
-            </li>
-            <li>
-              <a className="flex items-center gap-2">
-                <AppWindow className="w-5 h-5" /> Apps
-              </a>
-            </li>
-            <li>
-              <a className="flex items-center gap-2">
-                <Download className="w-5 h-5" /> Installation
-              </a>
-            </li>
+            <NavLink to='/'><li>
+            <a  className="flex items-center gap-1">
+              <Home className="w-5 h-5" /> Home
+            </a>
+          </li></NavLink>
+          <NavLink to='/Apps'><li>
+            <a className="flex items-center gap-1">
+              <AppWindow className="w-5 h-5" /> Apps
+            </a>
+          </li></NavLink>
+          <NavLink to='/Installation'><li>
+            <a className="flex items-center gap-1">
+              <Download className="w-5 h-5" /> Installation
+            </a>
+          </li></NavLink>
+          
+          
           </ul>
         </div>
 
         <a className="btn btn-ghost normal-case text-xl flex items-center gap-2">
-          <img src={Logo} alt="Logo" className="w-10 h-10" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-bold text-2xl">
-            HERO.IO
-          </span>
-        </a>
+    <Link to='/'>
+     <img src={Logo} alt="Logo" className="w-10 h-10" />
+    </Link>
+     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-bold text-2xl">
+      HERO.IO
+    </span>
+    </a>
+
       </div>
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-4">
-          <li>
-            <a className="flex items-center gap-1">
+          <NavLink to='/'><li>
+            <a  className="flex items-center gap-1">
               <Home className="w-5 h-5" /> Home
             </a>
-          </li>
-          <li>
+          </li></NavLink>
+          <NavLink to='/Apps'><li>
             <a className="flex items-center gap-1">
               <AppWindow className="w-5 h-5" /> Apps
             </a>
-          </li>
-          <li>
+          </li></NavLink>
+          <NavLink to='/Installation'><li>
             <a className="flex items-center gap-1">
               <Download className="w-5 h-5" /> Installation
             </a>
-          </li>
+          </li></NavLink>
+          
+          
         </ul>
       </div>
 

@@ -1,11 +1,17 @@
 import React from 'react';
+import { Outlet, useRouteError } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const ErrorPage = () => {
-    return (
-        <div>
-            <h1>404 Error</h1>
-        </div>
-    );
-};
+      const Error = useRouteError();
+  
+    return <div>
+        <Navbar />
+            <Outlet/>
+            <Footer/>
+            </div>;
+}
+
 
 export default ErrorPage;
