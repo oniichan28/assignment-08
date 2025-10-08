@@ -52,8 +52,9 @@ const Banner = () => {
       Trusted by Millions, Built for You
     </h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-x divide-white/40
-mx-5 my-10 ">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center divide-x divide-white/40 mx-5 my-10">
+
+
       <div className="flex flex-col items-center">
         <h3 className="text-2xl font">Total Downloads</h3>
         <div className='flex gap-3'>
