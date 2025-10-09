@@ -5,6 +5,8 @@ import { FaDownload, FaStar } from 'react-icons/fa';
 import { MdOutlineReviews } from 'react-icons/md';
 import RatingChart from './RatingChart';
 import LoadingSpinner from '../Components/LoadingSpinner';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -34,10 +36,16 @@ const AppDetails = () => {
 
   const handleInstall = () => {
     if (isInstalled) return;
+
     const existing = JSON.parse(localStorage.getItem('installed')) || [];
     const updated = [...existing, app];
     localStorage.setItem('installed', JSON.stringify(updated));
     setInstalledApps(prev => [...prev, app.id]);
+
+    toast.success(`${title} Installed Successfully!`, {
+      position: "top-center",
+      autoClose: 2000,
+    });
   };
 
   return (
@@ -82,14 +90,16 @@ const AppDetails = () => {
             </div>
           </div>
 
-          <button
-            onClick={handleInstall}
-            className="mt-6 btn btn-primary flex items-center gap-2"
-            disabled={isInstalled} 
-          >
-            {isInstalled ? 'Installed' : 'Install Now'}
-            {!isInstalled && <span className="ml-2">{size}MB</span>}
-          </button>
+          <div>
+            <button
+              onClick={handleInstall}
+              className="mt-6 btn btn-primary flex items-center gap-2"
+              disabled={isInstalled}
+            >
+              {isInstalled ? 'Installed' : 'Install Now'}
+              {!isInstalled && <span className="ml-2">{size}MB</span>}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -101,6 +111,8 @@ const AppDetails = () => {
         <h2 className="text-xl font-semibold mb-2">Description</h2>
         <p className="text-gray-700">{description}</p>
       </div>
+
+      <ToastContainer />
     </div>
   );
 };

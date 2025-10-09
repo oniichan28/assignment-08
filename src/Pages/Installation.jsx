@@ -4,6 +4,8 @@ import { FaDownload, FaStar } from "react-icons/fa";
 import { SlSocialDropbox } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../Components/LoadingSpinner";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Installation = () => {
   const [installedApps, setInstalledApps] = useState([]);
@@ -23,12 +25,17 @@ const Installation = () => {
 
   const handleUninstall = (appId) => {
     const updatedInstalled = installedApps.filter((app) => app.id !== appId);
+    const appToRemove = installedApps.find((app) => app.id === appId);
+
     setInstalledApps(updatedInstalled);
     localStorage.setItem("installed", JSON.stringify(updatedInstalled));
 
-    const appToRestore = installedApps.find((app) => app.id === appId);
-    if (appToRestore) {
-      setApps((prev) => [...prev, appToRestore]);
+    if (appToRemove) {
+      setApps((prev) => [...prev, appToRemove]);
+      toast.success(`${appToRemove.title} Uninstalled Successfully from your device`, {
+        position: "top-center",
+        autoClose: 2000,
+      });
     }
   };
 
@@ -131,6 +138,8 @@ const Installation = () => {
           )}
         </div>
       </main>
+
+      <ToastContainer />
 
       <style>
         {`
