@@ -5,16 +5,16 @@ import Footer from '../Components/Footer';
 import ScrollToTop from '../Components/ScrollToTop'; 
 
 const MainLayout = () => {
-    return (
-        <div className='flex flex-col min-h-screen'>
-            <ScrollToTop /> 
-            <Navbar />
-            <div className='flex-1 max-w-screen-2xl w-full px-4 md:px-8 lg:px-12 md:py-8 lg:py-12 mx-auto'>
-                <Outlet />
-            </div>
-            <Footer />
-        </div>
-    );
+  return (
+    <div className='flex flex-col min-h-screen'>
+      <ScrollToTop /> 
+      <Navbar />
+      <main className='flex-1 w-full mx-auto'>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default MainLayout;

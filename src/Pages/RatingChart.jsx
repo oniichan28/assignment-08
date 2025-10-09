@@ -2,7 +2,6 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 const RatingChart = ({ ratings }) => {
-  // ratings prop theke data use kora hocche
   const data = ratings.map(r => ({
     name: r.name,
     value: r.count,

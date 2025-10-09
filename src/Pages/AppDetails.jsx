@@ -4,12 +4,12 @@ import useApps from '../Hooks/useApps';
 import { FaDownload, FaStar } from 'react-icons/fa';
 import { MdOutlineReviews } from 'react-icons/md';
 import RatingChart from './RatingChart';
+import LoadingSpinner from '../Components/LoadingSpinner';
 
 const AppDetails = () => {
   const { id } = useParams();
-  const { apps } = useApps();
-  const app = apps.find(a => a.id === Number(id));
-
+  const { apps, loading } = useApps();
+  const [localLoading, setLocalLoading] = useState(true);
   const [installedApps, setInstalledApps] = useState([]);
 
   useEffect(() => {
@@ -17,15 +17,23 @@ const AppDetails = () => {
     setInstalledApps(existing.map(a => a.id));
   }, []);
 
+  useEffect(() => {
+    if (!loading && apps.length > 0) {
+      const timer = setTimeout(() => setLocalLoading(false), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [apps, loading]);
+
+  if (loading || localLoading) return <LoadingSpinner mode="fast" />;
+
+  const app = apps.find(a => a.id === Number(id));
   if (!app) return <p className="text-center py-10">App not found</p>;
 
   const { image, title, companyName, description, size, reviews, ratingAvg, downloads } = app;
-
   const isInstalled = installedApps.includes(app.id);
 
   const handleInstall = () => {
     if (isInstalled) return;
-
     const existing = JSON.parse(localStorage.getItem('installed')) || [];
     const updated = [...existing, app];
     localStorage.setItem('installed', JSON.stringify(updated));
@@ -85,10 +93,9 @@ const AppDetails = () => {
         </div>
       </div>
 
-       <div className="mt-10">
+      <div className="mt-10">
         <RatingChart ratings={app.ratings} />
       </div>
-
 
       <div className="mt-10">
         <h2 className="text-xl font-semibold mb-2">Description</h2>
