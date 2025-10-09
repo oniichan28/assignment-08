@@ -11,29 +11,41 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />, // General errors / 404
     children: [
       {
         index: true,
         element: <Home />,
-        loader: () => fetch("/appsData.json"),
+        loader: async () => {
+          const res = await fetch("/appsData.json");
+          if (!res.ok) throw new Response("Failed to load home data", { status: res.status });
+          return res.json();
+        },
       },
       {
         path: "apps",
         element: <Apps />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPage />, // Apps listing error
       },
       {
         path: "apps/:id",
         element: <AppDetails />,
-        errorElement: <AppError />,
+        errorElement: <AppError />, // App-specific error
         loader: async ({ params }) => {
           const res = await fetch("/appsData.json");
+          if (!res.ok) {
+            throw new Response("Failed to fetch apps data", { status: res.status });
+          }
+
           const data = await res.json();
-          const app = data.find((item) => item.id === params.id);
+
+          // Fix type mismatch: params.id is string, JSON id could be number
+          const app = data.find(item => item.id.toString() === params.id);
+
           if (!app) {
             throw new Response("App Not Found", { status: 404 });
           }
+
           return app;
         },
       },

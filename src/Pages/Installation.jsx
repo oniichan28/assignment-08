@@ -127,11 +127,11 @@ const Installation = () => {
                   </div>
 
                   <button
-                    onClick={() => handleUninstall(app.id)}
-                    className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white px-4 py-2 rounded-lg hover:opacity-90 transition text-xs sm:text-sm"
-                  >
-                    Uninstall
+                   onClick={() => handleUninstall(app.id)}
+                   className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white px-4 py-2 rounded-lg hover:opacity-90                 transition text-xs sm:text-sm cursor-pointer">
+                   Uninstall
                   </button>
+
                 </div>
               ))}
             </div>
