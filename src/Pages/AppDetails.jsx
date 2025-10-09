@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import useApps from '../Hooks/useApps';
 import { FaDownload, FaStar } from 'react-icons/fa';
 import { MdOutlineReviews } from 'react-icons/md';
+import RatingChart from './RatingChart';
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -83,6 +84,11 @@ const AppDetails = () => {
           </button>
         </div>
       </div>
+
+       <div className="mt-10">
+        <RatingChart ratings={app.ratings} />
+      </div>
+
 
       <div className="mt-10">
         <h2 className="text-xl font-semibold mb-2">Description</h2>

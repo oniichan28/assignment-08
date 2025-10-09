@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useApps from '../Hooks/useApps';
 import { FaDownload, FaStar } from 'react-icons/fa';
 import { SlSocialDropbox } from 'react-icons/sl';
+import { Link } from 'react-router-dom';
 
 const Installation = () => {
   const [installedApps, setInstalledApps] = useState([]);
@@ -71,16 +72,17 @@ const Installation = () => {
             key={app.id}
             className="flex flex-col sm:flex-row items-center sm:items-start justify-between rounded-lg p-4 shadow hover:shadow-md transition bg-white"
           >
-            <div className="w-24 h-24 flex-shrink-0 mb-4 sm:mb-0">
+            <Link to={`/Apps/${app.id}`} className="w-24 h-24 flex-shrink-0 mb-4 sm:mb-0">
               <img
                 src={app.image}
                 alt={app.title}
                 className="w-full h-full object-cover rounded-lg"
               />
-            </div>
-
+            </Link>
             <div className="flex-1 sm:ml-6 text-center sm:text-left">
-              <h2 className="text-lg sm:text-xl font-bold">{app.title}</h2>
+              <Link to={`/Apps/${app.id}`}>
+                <h2 className="text-lg sm:text-xl font-bold hover:text-purple-600">{app.title}</h2>
+              </Link>
               <p className="text-gray-500 text-sm">{app.companyName}</p>
 
               <div className="flex flex-wrap justify-center sm:justify-start items-center gap-3 mt-2 text-sm">
@@ -95,7 +97,6 @@ const Installation = () => {
                 </div>
               </div>
             </div>
-
             <div className="mt-4 sm:mt-0">
               <button
                 className="btn btn-primary hover:bg-red-700 text-white px-4 py-2 rounded-md"

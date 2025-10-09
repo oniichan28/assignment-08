@@ -15,7 +15,6 @@ const Apps = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Header + Search */}
       <div className='flex flex-col sm:flex-row justify-between items-center gap-4 py-5'>
         <h1 className='text-3xl font-bold'>({searchedApps.length}) Apps Found</h1>
         <div className="relative w-full sm:w-64">

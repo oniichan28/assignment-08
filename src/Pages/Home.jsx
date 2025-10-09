@@ -30,8 +30,7 @@ const Home = () => {
       <div className='py-5 flex justify-center my-5'>
         <Link 
           className='btn btn-outline w-[300px] h-[50px] rounded-xl bg-gradient-to-l from-[#632EE3] to-[#9F62F2] text-white flex items-center justify-center'
-          to='/Apps'
-        >
+          to='/Apps'>
           <h1 className='text-2xl font-semibold'>Show All</h1>
         </Link>
       </div>
