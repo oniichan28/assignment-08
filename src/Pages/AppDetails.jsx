@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useApps from '../Hooks/useApps';
 import { FaDownload, FaStar } from 'react-icons/fa';
 import { MdOutlineReviews } from 'react-icons/md';
@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AppDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { apps, loading } = useApps();
   const [localLoading, setLocalLoading] = useState(true);
   const [installedApps, setInstalledApps] = useState([]);
@@ -28,10 +29,24 @@ const AppDetails = () => {
 
   if (loading || localLoading) return <LoadingSpinner mode="fast" />;
 
+  // App find
   const app = Array.isArray(apps) ? apps.find(a => String(a.id) === String(id)) : null;
 
-  if (!app) return <p className="text-center py-10 text-gray-500">App not found</p>;
+  // No Apps Found screen
+  if (!app || apps.length === 0)
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
+        <h1 className="text-5xl font-bold text-gray-700 mb-6">No Apps Found</h1>
+        <button
+          onClick={() => navigate('/apps')}
+          className="px-6 py-3 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white rounded-xl font-semibold shadow hover:opacity-90 transition"
+        >
+          Show All Apps
+        </button>
+      </div>
+    );
 
+  // Normal App Details
   const { image, title, companyName, description, size, reviews, ratingAvg, downloads, ratings } = app;
   const isInstalled = installedApps.includes(app.id);
 

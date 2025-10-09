@@ -42,13 +42,13 @@ const Apps = () => {
         <div className="flex gap-3">
           <button
             onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white rounded-xl font-semibold shadow hover:opacity-90 transition"
+            className="px-6 py-3 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white rounded-xl font-semibold shadow hover:opacity-90 transition cursor-pointer"
           >
             Retry
           </button>
           <a
             href="/"
-            className="px-6 py-3 bg-gray-100 text-gray-800 rounded-xl font-semibold shadow hover:bg-gray-200 transition"
+            className="px-6 py-3 bg-gray-100 text-gray-800 rounded-xl font-semibold shadow hover:bg-gray-200 transition cursor-pointer"
           >
             Go Home
           </a>
@@ -86,12 +86,23 @@ const Apps = () => {
           />
         </div>
       </div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center py-8">
-        {searchedApps.map(app => (
-          <AppCard key={app.id} apps={app} />
-        ))}
-      </div>
+      {searchedApps.length === 0 ? (
+        <div className="flex flex-col items-center justify-center py-20 gap-5">
+          <h1 className="text-5xl font-bold text-gray-500 mb-6">No Apps Found</h1>
+          <button
+            onClick={() => setSearch('')}
+            className="px-6 py-3 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white rounded-xl font-semibold shadow hover:opacity-90 transition cursor-pointer"
+          >
+            Show All Apps
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center py-8">
+          {searchedApps.map(app => (
+            <AppCard key={app.id} apps={app} />
+          ))}
+        </div>
+      )}
 
       <style>
         {`
