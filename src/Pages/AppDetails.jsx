@@ -20,18 +20,19 @@ const AppDetails = () => {
   }, []);
 
   useEffect(() => {
-    if (!loading && apps.length > 0) {
-      const timer = setTimeout(() => setLocalLoading(false), 500);
+    if (!loading) {
+      const timer = setTimeout(() => setLocalLoading(false), 300);
       return () => clearTimeout(timer);
     }
-  }, [apps, loading]);
+  }, [loading]);
 
   if (loading || localLoading) return <LoadingSpinner mode="fast" />;
 
-  const app = apps.find(a => a.id === Number(id));
-  if (!app) return <p className="text-center py-10">App not found</p>;
+  const app = Array.isArray(apps) ? apps.find(a => String(a.id) === String(id)) : null;
 
-  const { image, title, companyName, description, size, reviews, ratingAvg, downloads } = app;
+  if (!app) return <p className="text-center py-10 text-gray-500">App not found</p>;
+
+  const { image, title, companyName, description, size, reviews, ratingAvg, downloads, ratings } = app;
   const isInstalled = installedApps.includes(app.id);
 
   const handleInstall = () => {
@@ -104,7 +105,7 @@ const AppDetails = () => {
       </div>
 
       <div className="mt-10">
-        <RatingChart ratings={app.ratings} />
+        <RatingChart ratings={ratings || {}} />
       </div>
 
       <div className="mt-10">

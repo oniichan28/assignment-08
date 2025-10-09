@@ -18,9 +18,9 @@ const LoadingSpinner = ({ mode = "fast" }) => {
   return (
     <div
       style={{
-        position: "fixed", // 🟣 এটি গুরুত্বপূর্ণ — পুরো স্ক্রিন ঢেকে ফেলবে
-        inset: 0, // top, right, bottom, left = 0
-        zIndex: 50, // উপরে রাখবে
+        position: "fixed", 
+        inset: 0, 
+        zIndex: 50, 
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
