@@ -59,7 +59,7 @@ const Installation = () => {
 
   return (
     <div className="flex flex-col min-h-screen fade-in">
-      <main className="flex-1 overflow-auto px-3 sm:px-6 pt-6 sm:pt-10">
+      <main className="flex-1 overflow-auto px-3 sm:px-6 pt-6 sm:pt-10 mb-20">
         <div className="flex flex-col justify-center items-center mb-6 text-center">
           <div className="flex justify-center items-center gap-2 flex-wrap">
             <h1 className="font-bold text-3xl sm:text-4xl">Your Installed Apps</h1>
@@ -70,20 +70,25 @@ const Installation = () => {
           </p>
         </div>
 
-        <div className="flex justify-between items-center mb-2 border-b pb-2">
-          <h1 className="text-purple-500 font-semibold border-b-2 border-purple-400 pb-1 text-sm sm:text-base">
-            {sortedApps.length} Apps Found
-          </h1>
-          <select
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-            className="border rounded px-2 py-1 text-sm sm:text-base"
-          >
-            <option value="none">Sort By Size</option>
-            <option value="size-asc">Low → High</option>
-            <option value="size-dsc">High → Low</option>
-          </select>
-        </div>
+        <div className="flex justify-between items-center mb-4 border-b border-gray-300 pb-4">
+  <h1 className="text-purple-500 font-semibold border-b-2 border-purple-400 pb-1 text-sm sm:text-base">
+    {sortedApps.length} Apps Found
+  </h1>
+
+  <select
+    value={sortOrder}
+    onChange={(e) => setSortOrder(e.target.value)}
+    className="px-4 py-2 bg-white text-gray-800 font-semibold 
+               rounded-lg shadow-sm border border-gray-300 
+               hover:shadow-md hover:border-gray-400 
+               active:scale-95 transition-all duration-200 ease-in-out 
+               text-sm sm:text-base cursor-pointer">
+    <option value="none">Sort By Size</option>
+    <option value="size-asc">Low → High</option>
+    <option value="size-dsc">High → Low</option>
+  </select>
+</div>
+
 
         <div className="max-w-6xl mx-auto flex flex-col gap-4">
           {sortedApps.length === 0 ? (
@@ -93,8 +98,7 @@ const Installation = () => {
               {sortedApps.map((app) => (
                 <div
                   key={app.id}
-                  className="flex items-center justify-between rounded-lg p-4 shadow hover:shadow-md transition bg-white gap-4"
-                >
+                  className="mt-5 flex items-center justify-between rounded-lg p-4 shadow hover:shadow-md transition bg-white gap-4">
                   <Link to={`/Apps/${app.id}`} className="w-16 h-16 flex-shrink-0">
                     <img
                       src={app.image}

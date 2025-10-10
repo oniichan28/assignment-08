@@ -3,6 +3,7 @@ import AppCard from '../Components/AppCard';
 import useApps from '../Hooks/useApps';
 import LoadingSpinner from '../Components/LoadingSpinner';
 import AppErrorImg from '../assets/Images/App-Error.png';
+import { VscVscode } from 'react-icons/vsc';
 
 const Apps = () => {
   const { apps, loading, error } = useApps();
@@ -58,7 +59,20 @@ const Apps = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+    <div className="mt-5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+    <div className='flex flex-col gap-3 justify-center items-center mb-5 px-4'>
+  <div className='flex flex-wrap justify-center items-center text-center gap-2'>
+    <h6 className='font-bold text-2xl sm:text-4xl flex items-center'>
+      Our All Applications
+      <VscVscode className='h-5 w-5 sm:h-8 sm:w-8 text-purple-700 ml-2' />
+    </h6>
+  </div>
+
+  <p className='text-gray-500 font-semibold text-center text-sm sm:text-base max-w-xl'>
+    Explore All Apps on the Market developed by us. We code for Millions
+  </p>
+</div>
+
       <div className='flex flex-col sm:flex-row justify-between items-center gap-4 py-5'>
         <h1 className='text-3xl font-bold'>
           ({searchedApps.length}) Apps Found
